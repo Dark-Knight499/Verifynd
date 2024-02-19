@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeriFynd | Online Fact Checker </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='phone.css') }}">
+
+</head>
+
+<body>
+    <video autoplay loop muted plays-inline id="bgvid">
+        <source src=" {{ url_for('static', filename='bgvid.mp4')}}">
+    </video>
+    <div id="homepage">
+        <nav id="navbar">
+            <div id="logo">
+                <img src="logo-edited.png" alt="">
+            </div>
+            <div id="title">VeriFynd</div>
+
+            <ul>
+                <li class="item" style="order: 5;"><a href="#" class="active">Home</a></li>
+                <li class="item" style="order: 4;"><a href="#">Services</a></li>
+                <li class="item" style="order: 3;"><a href="#">About Us</a></li>
+                <li class="item" style="order: 2;"><a href="#">Contact Us</a></li>
+                <li class="item" style="order: 1;"><Button>Login</Button></li>
+            </ul>
+        </nav>
+
+        <section id="home">
+            <h1 class="h-primary">Real??</h1>
+            <p id="subtext">Stay ahead of misinformation with our groundbreaking news authenticity checker, setting new standards in trustworthiness!</p>
+            <div id="utbar">
+            <div id="switchbtn">
+                <button class="btn" id="urlbtn" onclick="tab1();">
+                    URL
+                </button>
+                <button class="btn" id="textbtn" onclick="tab2();">
+                    TEXT
+                </button>
+            </div>
+          <form method="POST" action=".">
+    <div id="sbar">
+        <p id="order1">
+            <input type="url" placeholder="Enter url." id="enterlocation1" name="enterlocation1">
+            <button class="btn" href="#services" id="ordernow" type="submit">CHECK</button>
+        </p>
+        <p id="order2">
+            <input type="text" href="#services" placeholder="Enter the text." id="enterlocation2" name="enterlocation2">
+            <button class="btn" id="ordernow" type="submit">CHECK</button>
+        </p>
+    </div>
+</form>
+
+        </section>
+    </div>
+
+    <div class="services-container">
+        <div id="services">
+           <div class="h-primary" id="results">
+            Results  
+            {{ result }}
+           </div>
+        </div>
+    </div>
+
+    <div id="end">
+    <div class="contactus-container">
+        <h1 class="h-primary1">ABOUT US</h1>
+        <div id="abtustext">
+            Welcome to <span id="red">VeriFynd</span>, where accuracy meets assurance. At Fact Verifier, we recognize the critical role that reliable information plays in today's dynamic landscape. Our commitment is to provide a trustworthy platform for fact-checking, ensuring that you have access to verified and credible data.<br><br>
+
+Founded with a passion for truth and integrity, Fact Verifier stands as a beacon in the era of information overload. In a world where misinformation can have far-reaching consequences, we take pride in our mission to empower individuals, businesses, and organizations with the tools they need to discern fact from fiction.<br><br>
+
+Our dedicated team of experts comprises seasoned professionals in fact-checking, research, and data analysis. We employ robust methodologies and cutting-edge technologies to meticulously verify information, delivering results you can depend on. Whether you're a journalist, researcher, or concerned citizen, Fact Verifier is your go-to resource for accurate and validated data.<br><br>
+
+Transparency is at the core of our values. We understand the importance of clear, concise, and credible information, and we strive to provide it in every aspect of our services. Our user-friendly platform is designed to make fact-checking accessible to everyone, promoting a culture of accountability and informed decision-making.<br><br>
+
+At Fact Verifier, we go beyond the surface, delving into the depths of information to uncover the truth. Our commitment to excellence extends to our clients, and we are dedicated to fostering a community where verifiable information is the cornerstone of knowledge.<br><br>
+
+Join us on our journey to create a world where facts matter, where misinformation is challenged, and where truth prevails. Fact Verifier – your partner in the pursuit of accuracy and reliability.
+    </div>   
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
