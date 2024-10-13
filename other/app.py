@@ -4,7 +4,7 @@ import google.generativeai as genai
 import requests
 from bs4 import BeautifulSoup
 
-genai.configure(api_key="AIzaSyDOSxuJMXlB5su56qhVTDr2KP0q7CX9uAk")
+genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-pro")
 
 def score_color(value):
