@@ -110,7 +110,7 @@ RETURN ONLY JSON NO EXTRA THINGS FORMATS NO EXTRA WORDS GIVE THE OUTPUT JSON.
 """
     return model.generate_content(prompt)
 
-st.title("News Grader: Analyze News Authenticity")
+st.title("Verifynd: Analyze News Authenticity")
 
 tab1, tab2 = st.tabs(["Text Input", "URL Input"])
 
