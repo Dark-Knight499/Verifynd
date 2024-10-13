@@ -3,7 +3,8 @@ import json
 import google.generativeai as genai
 import requests
 from bs4 import BeautifulSoup
-
+import os
+API_KEY = st.secrets["API_KEY"]
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-pro")
 
