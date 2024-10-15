@@ -3,7 +3,8 @@ import json
 import google.generativeai as genai
 import requests
 from bs4 import BeautifulSoup
-
+import os
+API_KEY = st.secrets["API_KEY"]
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-pro")
 
@@ -110,7 +111,7 @@ RETURN ONLY JSON NO EXTRA THINGS FORMATS NO EXTRA WORDS GIVE THE OUTPUT JSON.
 """
     return model.generate_content(prompt)
 
-st.title("News Grader: Analyze News Authenticity")
+st.title("Verifynd: Analyze News Authenticity")
 
 tab1, tab2 = st.tabs(["Text Input", "URL Input"])
 
