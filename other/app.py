@@ -77,7 +77,7 @@ def summarize(news: str):
     response = model.generate_content(f"Precisely summarize the context without folding of facts. Summarize it carefully: {news}")
     return response.text
 
-def analyze_news(news_summary: str):
+def analyze_news(news_summary: str,url:str):
     prompt = f"""
     You are a highly experienced fact-checker and news analyst with expertise in evaluating the authenticity, bias, and accuracy of news articles. Your task is to analyze the following news article and provide a detailed JSON report with scores, descriptions, and recommendations. Consider the following criteria:
 
@@ -105,6 +105,7 @@ Return the analysis in JSON format with the following structure:
 }}
 
 Analyze this news: {news_summary}
+source : {url}
 RETURN ONLY JSON NO EXTRA THINGS FORMATS NO EXTRA WORDS GIVE THE OUTPUT JSON.
 """
     return model.generate_content(prompt)
@@ -118,7 +119,7 @@ with tab1:
     news_text = st.text_area("Paste the news article text here:")
     if st.button("Analyze Text", key="text_analyze"):
         if news_text:
-            analysis_result = analyze_news(news_text)
+            analysis_result = analyze_news(news_text,"Through text")
             parsed_output = parse_analysis_output(analysis_result)
             st.markdown(parsed_output, unsafe_allow_html=True)
         else:
@@ -135,7 +136,7 @@ with tab2:
                 st.error(news_content)
             else:
                 summarized_content = summarize(news_content)
-                analysis_result = analyze_news(summarized_content)
+                analysis_result = analyze_news(summarized_content,news_url)
                 parsed_output = parse_analysis_output(analysis_result)
                 st.markdown(parsed_output, unsafe_allow_html=True)
         else:
