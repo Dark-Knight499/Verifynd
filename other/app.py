@@ -81,7 +81,7 @@ def summarize(news: str):
 def analyze_news(news_summary: str,url:str):
     prompt = f"""
     You are a highly experienced fact-checker and news analyst with expertise in evaluating the authenticity, bias, and accuracy of news articles. Your task is to analyze the following news article and provide a detailed JSON report with scores, descriptions, and recommendations. Consider the following criteria:
-
+    Search Up the latest news!
 - Accuracy: How factual and supported by evidence is the article? Check for misinformation or dubious claims.
 - Bias: Identify any political, cultural, or ideological bias present in the article. Rate the bias on a scale from neutral to highly biased.
 - Source Credibility: Evaluate the sources used in the article. Are they trustworthy and verifiable?
